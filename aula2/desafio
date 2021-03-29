@@ -1,0 +1,3 @@
+Construir um protótipo do jogo Ping Pong;
+	- Barra controlada pelo mouseY;
+	- Colisão entre a barra e a bola;
