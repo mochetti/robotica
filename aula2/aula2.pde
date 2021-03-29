@@ -1,20 +1,24 @@
-PVector robo = new PVector(0, 0);
-PVector vel = new PVector(1, 1);
+PVector pos;
+PVector vel = new PVector(0, 0);
+PVector acel = new PVector(0, 1);
 
 void setup() {
   size(400, 400);
+  pos = new PVector(width/2, 0);
 }
 void draw() {
   background(0);
-  if(robo.x == width || robo.x == 0) {
+  if(pos.x > width || pos.x < 0) {
     vel.x = -1 * vel.x;
   }
-  if(robo.y == height || robo.y == 0) {
+  if(pos.y > height || pos.y < 0) {
     vel.y = -1 * vel.y;
   }
   
-  robo.x = robo.x + vel.x
-  robo.y = robo.y + vel.y;
-   
-  circle(robo.x, robo.y, 50);
+  vel.x = vel.x + acel.x;
+  vel.y = vel.y + acel.y;
+  pos.x = pos.x + vel.x;
+  pos.y = pos.y + vel.y;
+
+  circle(width/2, pos.y, 50);
 }
