@@ -13,7 +13,7 @@ void draw() {
     vel.y = -1 * vel.y;
   }
   
-  robo.x = robo.x + vel.x;
+  robo.x = robo.x + vel.x
   robo.y = robo.y + vel.y;
    
   circle(robo.x, robo.y, 50);
